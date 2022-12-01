@@ -24,54 +24,83 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-
+  let licenseLink;
+  switch (license) {
+    case 'MIT':
+      licenseLink = "https://opensource.org/licenses/MIT";
+      break;
+    case "Apache 2.0":
+      licenseLink = "https://opensource.org/licenses/Apache-2.0";
+      break;
+    case "GPL 3.0":
+      licenseLink = "https://opensource.org/licenses/GPL-3.0";
+      break;  
+    case "BSD 3":
+      licenseLink = "https://opensource.org/licenses/BSD-3-Clause";
+      break;  
+    case "None":
+      badge = null;
+      break;
+  } return licenseLink;
 };
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-
+  return `This repository uses the ${license}. Use of this repository and all of it's content is subject to those specific rules.
+  For more information regarding use please see the LICENSE file part of this repository or visit the link below for more information about the license and what you can and can't do with this code.
+  - [Repository License Information](${renderLicenseLink(license)})
+  `
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
-  <h1 style="text-align: center; border: none;">${data.prjName}</h1>
-  <p style="text-align: center;">
-    ${renderLicenseBadge(data.prjLicense)}
-  </p>
+  # ${data.prjName}
+  ${renderLicenseBadge(data.prjLicense)}
   
-  Written by: ${data.usrName}
-
-  Contact me: ${data.usrEmail}
+  Written by: [${data.name}](${data.usrName})
   
   ## Table of Contents
   - [Description](#Description)
   - [Installation](#Installation)
+  - [Tests](#Tests)
   - [Usage](#Usage)
-  - [Credits](#Credits)
+  - [Contributing](#Contributing)
   - [License](#License)
+  - [Questions](#Questions)
   
   ## Description
   ${data.prjDescription}
 
   ## Installation
-  In order to install and use make sure to initiate Node.js using: \`${data.cmdInstall}\`
-  
-  For testing purposes you can use: \`${data.cmdTest}\`
+  In order to install and use make sure to initiate using: 
+  \`\`\`
+  ${data.cmdInstall}
+  \`\`\`
+  This will ensure that everything is setup correctly and the dependancies needed are in place.
+
+  ## Tests
+  For testing purposes you can use the following command:
+  \`\`\`
+  ${data.cmdTest}
+  \`\`\`
 
   ## Usage
   ${data.repoInfo}
 
-  ## Credits
+  ## Contributing 
   ${data.contributeInfo}
 
   ## License
   ${renderLicenseSection(data.prjLicense)}
 
-  ${renderLicenseLink(data.prjLicense)}
+  ## Questions?
+  Contact me: 
+  - Email: ${data.usrEmail}
+  - Github: <a href="https://github.com/${data.usrName}"><img src="https://img.shields.io/badge/Profile-${data.usrName}-blue?logo=github"></a>
 
-
+  Thanks for checkout out my code!
   `;
 }
 
