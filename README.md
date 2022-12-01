@@ -30,7 +30,13 @@
   ```
 
   ## Usage
-  This repository is a Command Line Interface tool. In order to use it properly the repository should be cloned and the installation instructions should be followed. Once properly installed, the AUTO-README tool will make a new README file in the directory it is invoked in. Simply follow and answer the prompts asked in the command line and once all questions are completed, a new README.md file should appear in the same folder. Be advised this will overwrite any existing file with the same file name 'README.md'.
+  This repository is a Command Line Interface tool. In order to use it properly the repository should be cloned and the installation instructions should be followed. Once properly installed, the AUTO-README tool will make a new README file in the directory it is invoked in. If the repository is properly cloned and installed the AUTO-README tool should be able to be used using the following command:
+  
+  ```
+  node index.js
+  ```
+  
+  Simply follow and answer the prompts asked in the command line and once all questions are completed, a new README.md file should appear in the same folder. Be advised this will overwrite any existing file with the same file name 'README.md'.
 
   ## Contributing 
   Feel free to contribute to this repository if it catches your eye. I'd be happy knowing that this little project caught some attention and was useful to others. This project is something I came up with while attending a coding bootcamp and was learning to code. So if you are also just looking around and learning from me then I encourage to use this repository for any inspiration you need to make your own and learn as well. Happy Hacking!
