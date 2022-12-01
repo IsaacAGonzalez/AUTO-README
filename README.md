@@ -3,8 +3,6 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue"></a>
   
   Written by: [Isaac Gonzalez](IsaacAGonzalez)
-
-  ![](./assets/AUTO-README%20DEMO.gif)
   
   ## Table of Contents
   - [Description](#Description)
